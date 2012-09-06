@@ -3,22 +3,36 @@
 </head>
 
 <body>
-  <div id="heading" class="container">
-    <h1>Create <em>your</em> Photography Portfolio</h1>
-    {{> form}}
-  </div>
+  {{> main}}
 </body>
 
+<template name="main">
+  {{#if port}}
+    {{> port}}
+  {{else}}
+    {{> form}}
+  {{/if}}
+</template>
+
 <template name="form">
-  <form id="newPortfolio">
-    <p class="instructions">My <em>name</em> is <input type="text" id="p-name" style="width:500px;" /></p>
-    <p class="instructions">The <em>title</em> of my portfolio is <input type="text" id="p-title" style="width:500px;" /></p>
-    <p class="instructions">The <em>color scheme</em> of my portfolio is
-      <div class="btn-group" data-toggle="buttons-radio">
-        <button type="button" class="btn btn-inverse btn-large active" data-toggle="button">Dark</button>
-        <button type="button" class="btn btn-large" data-toggle="button">Light</button>
-      </div>
-    </p>
-    <input type='submit' class="span12 btn btn-success" value='Generate' />
-  </form>
+  <div id="heading" class="container">
+    <h1>Create <em>your</em> Photography Portfolio</h1>
+    <form id="newPortfolio">
+      <p class="instructions">My <em>name</em> is <input type="text" id="p-name" style="width:500px;" /></p>
+      <p class="instructions">The <em>title</em> of my portfolio is <input type="text" id="p-title" style="width:500px;" /></p>
+      <p class="instructions">The <em>color scheme</em> of my portfolio is
+        <div class="btn-group" data-toggle="buttons-radio">
+          <button type="button" class="btn btn-inverse btn-large active" data-toggle="button">Dark</button>
+          <button type="button" class="btn btn-large" data-toggle="button">Light</button>
+        </div>
+      </p>
+      <input type='submit' class="span12 btn btn-success" value='Generate' />
+    </form>
+  </div>
+</template>
+
+<template name="port">
+  <div id="heading" class="container">
+    <h1>{{title}}</h1>
+  </div>
 </template>
