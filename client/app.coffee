@@ -4,6 +4,7 @@ Meteor.subscribe "ports"
 
 Template.main.rendered = ->
   $('body').animate backgroundColor: '#333'
+  $('title').text("#{Session.get('port')} | Portfolio") if Session.get('port')
 
 Template.main.port = ->
   Session.get "port"
