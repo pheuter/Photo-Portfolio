@@ -9,11 +9,18 @@
 
 
 body
-  background-color #333
-  
+  background-color #FFF
+    
 h1
   font-family 'Life Savers', cursive
   font-size 60px
+  line-height 1em
+  color #F5F5F5
+  
+h2
+  font-family "HelveticaNeue-ExtraLight", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+  font-weight 100
+  font-size 42px
   line-height 1em
   color #F5F5F5
   
@@ -61,3 +68,29 @@ input[type=submit]
 
 div#heading
   relative top 50px
+  
+  h2
+    relative top 20px
+    text-shadow 2px 0px 10px #000
+    
+    &:before
+      content: "By "
+      font-weight 300
+
+    
+  button
+    relative top 20px
+    
+#photos
+  relative top 100px
+  width 640px
+  
+  .photo
+    margin-bottom 50px
+
+    img
+      margin-bottom 5px
+      border-radius 2px
+      background-color white
+      border 1px solid rgba(0, 0, 0, 0.8)
+      box-shadow 0 1px 3px rgba(0, 0, 0, 0.5)

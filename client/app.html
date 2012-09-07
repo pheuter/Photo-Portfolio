@@ -1,5 +1,7 @@
 <head>
   <title>Photography Portfolio</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+  <script src="//api.filepicker.io/v0/filepicker.js"></script>
 </head>
 
 <body>
@@ -20,12 +22,6 @@
     <form id="newPortfolio">
       <p class="instructions">My <em>name</em> is <input type="text" id="p-name" style="width:500px;" /></p>
       <p class="instructions">The <em>title</em> of my portfolio is <input type="text" id="p-title" style="width:500px;" /></p>
-      <p class="instructions">The <em>color scheme</em> of my portfolio is
-        <div class="btn-group" data-toggle="buttons-radio">
-          <button type="button" class="btn btn-inverse btn-large active" data-toggle="button">Dark</button>
-          <button type="button" class="btn btn-large" data-toggle="button">Light</button>
-        </div>
-      </p>
       <input type='submit' class="span12 btn btn-success" value='Generate' />
     </form>
   </div>
@@ -33,6 +29,23 @@
 
 <template name="port">
   <div id="heading" class="container">
-    <h1>{{title}}</h1>
+    <div class="row">
+      {{#with data}}
+        <h1 class="span5">{{title}}</h1>
+        <h2 class="span5">{{name}}</h2>
+        <button class="span2 btn btn-primary btn-large">Upload Photos</button>
+      {{/with}}
+    </div>
+  </div>
+  <div id="photos" class="container">
+    {{#with data}}
+      {{#each photos}}
+        <div class="photo">
+          <img src="{{this}}" />
+          <a class="btn download" href="{{this}}">Download</a>
+          <button class="btn btn-danger delete">Delete</button>
+        </div>
+      {{/each}}
+    {{/with}}
   </div>
 </template>
