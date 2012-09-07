@@ -1,5 +1,6 @@
 <head>
   <title>Photography Portfolio</title>
+  <script src="//crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/sha256.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
   <script src="//api.filepicker.io/v0/filepicker.js"></script>
 </head>
@@ -22,6 +23,7 @@
     <form id="newPortfolio">
       <p class="instructions">My <em>name</em> is <input type="text" id="p-name" style="width:500px;" /></p>
       <p class="instructions">The <em>title</em> of my portfolio is <input type="text" id="p-title" style="width:500px;" /></p>
+      <p class="instructions">The <em>password</em> for my portfolio is <input type="password" id="p-pass" style="width:500px;" /></p>
       <input type='submit' class="span12 btn btn-success" value='Generate' />
     </form>
   </div>
@@ -31,10 +33,17 @@
   <div id="heading" class="container">
     <div class="row">
       {{#with data}}
-        <h1 class="span5">{{title}}</h1>
-        <h2 class="span5">{{name}}</h2>
-        <button class="span2 btn btn-primary btn-large">Upload Photos</button>
+        <h1 class="span4">{{title}}</h1>
+        <h2 class="span4">{{name}}</h2>
+        <button id="upload" class="span2 btn btn-primary btn-large">Upload Photos</button>
       {{/with}}
+      {{#if authed}}
+        {{#with data}}
+          <button class="btn btn-large btn-success span2 disabled">Welcome {{name}}</button>
+        {{/with}}
+      {{else}}
+        <form id="password"><input type="password" class="span2" placeholder="Set edit password" /></form>
+      {{/if}}
     </div>
   </div>
   <div id="photos" class="container">
