@@ -13,20 +13,20 @@ body
     
 h1
   font-family 'Duru Sans', sans-serif
-  font-size 42px
+  font-size 38px
   line-height 1em
   color #F5F5F5
   
 h2
   font-family "HelveticaNeue-ExtraLight", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
   font-weight 100
-  font-size 32px
+  font-size 28px
   line-height 1em
   color #F5F5F5
   
 p
   font-family 'Duru Sans', sans-serif
-  font-size 28px
+  font-size 22px
   color #FDFDFD
   
   &.instructions
@@ -47,7 +47,7 @@ input[type=text]
   border-bottom 1px solid #555
   
   font-family 'Duru Sans', sans-serif
-  font-size 42px
+  font-size 38px
   color white
   
   &:focus
@@ -62,22 +62,16 @@ input[type=submit]
   relative top 50px
   height 100px
   font-family 'Duru Sans', sans-serif
-  font-size 42px
+  font-size 38px
   color white
     
 
-div#heading
-  relative top 50px
+div#heading  
+  relative top 50px left 30px
+  
   
   h1
-    relative bottom 10px
-  
-  h2
     text-shadow 2px 0px 10px #000
-    
-    &:before
-      content: "By "
-      font-weight 300
 
     
   input[type=password]
@@ -90,7 +84,7 @@ div#heading
     border-bottom 1px solid #555
     
     font-family 'Duru Sans', sans-serif
-    font-size 42px
+    font-size 38px
     color white
     
     &:focus
@@ -102,8 +96,29 @@ div#heading
       
     &::-moz-placeholder
       font-size 16px
+      
+div#portfolios
+  relative top 50px left 30px
+  overflow-y auto
     
-#photos
+  ul
+    margin-top 30px
+    
+    li
+      font-family 'Duru Sans', sans-serif
+      font-size 42px
+      color white 
+      line-height 1.5em
+      
+      .title
+        text-transform capitalize
+        text-shadow 2px 0px 10px #000
+        color #FDFDFD
+        
+      .name
+        text-transform capitalize
+    
+div#photos
   relative top 100px
   width 640px
   

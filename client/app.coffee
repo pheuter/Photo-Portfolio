@@ -22,9 +22,19 @@ Template.form.events =
         title: t.find('#p-title').value
         password: CryptoJS.SHA256(t.find('#p-pass').value).toString()
         photos: []
-      , -> window.location.href = "/!/#{t.find('#p-title').value}"
+        time: (new Date).getTime()
+      , ->
+        setTimeout (->
+          window.location.href = "/!/#{t.find('#p-title').value}"
+        ), 1000 
       
     
+Template.form.portfolios = ->
+  Ports.find(
+    {},
+    sort: time: -1
+  )
+
 
 Template.port.events = 
   'submit #password': (e,t) ->

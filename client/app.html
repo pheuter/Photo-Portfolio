@@ -18,15 +18,24 @@
 </template>
 
 <template name="form">
-  <div id="heading" class="container">
-    <h1>Create <em>your</em> Photography Portfolio</h1>
-    <form id="newPortfolio">
-      <p class="instructions">My <em>name</em> is <input type="text" id="p-name" style="width:500px;" /></p>
-      <p class="instructions">The <em>title</em> of my portfolio is <input type="text" id="p-title" style="width:500px;" /></p>
-      <p class="instructions">The <em>password</em> for my portfolio is <input type="password" id="p-pass" style="width:500px;" /></p>
-      <input type='submit' class="span12 btn btn-success" value='Generate' />
-    </form>
-  </div>
+    <div class="row-fluid">
+      <div id="heading" class="span6">
+        <h1><em>Your</em> Photo Portfolio</h1>
+        <form id="newPortfolio">
+          <p class="instructions">My <em>name</em> is <input type="text" id="p-name" style="" /></p>
+          <p class="instructions">The <em>title</em> of my portfolio is <input type="text" id="p-title" style="" /></p>
+          <p class="instructions">The <em>password</em> for my portfolio is <input type="password" id="p-pass" style="" /></p>
+          <input type='submit' class="btn btn-success" value='Generate' />
+        </form>
+      </div>
+      <div id="portfolios" class="span6">
+        <ul>
+          {{#each portfolios}}
+              <li><a href="/!/{{title}}"><span class="title">{{title}}</span> by <span class="name">{{name}}</span></a></li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
 </template>
 
 <template name="port">
