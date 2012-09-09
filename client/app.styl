@@ -1,10 +1,10 @@
 @import 'nib'
 
 @font-face
-  font-family 'Life Savers'
+  font-family 'Duru Sans'
   font-style normal
   font-weight 400
-  src local('Life Savers'), local('LifeSavers'), url(http://themes.googleusercontent.com/static/fonts/lifesavers/v2/_yRJoxB8KMO25_gswqItc7rIa-7acMAeDBVuclsi6Gc.woff) format('woff')
+  src local('Duru Sans'), local('DuruSans-Regular'), url(http://themes.googleusercontent.com/static/fonts/durusans/v3/0rnIdjSQWlqFS5KpKzVfzrO3LdcAZYWl9Si6vvxL-qU.woff) format('woff')
 
 
 
@@ -12,21 +12,21 @@ body
   background-color #FFF
     
 h1
-  font-family 'Life Savers', cursive
-  font-size 60px
+  font-family 'Duru Sans', sans-serif
+  font-size 42px
   line-height 1em
   color #F5F5F5
   
 h2
   font-family "HelveticaNeue-ExtraLight", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
   font-weight 100
-  font-size 42px
+  font-size 32px
   line-height 1em
   color #F5F5F5
   
 p
-  font-family 'Life Savers', cursive
-  font-size 32px
+  font-family 'Duru Sans', sans-serif
+  font-size 28px
   color #FDFDFD
   
   &.instructions
@@ -46,8 +46,8 @@ input[type=text]
   border-radius 0px
   border-bottom 1px solid #555
   
-  font-family 'Life Savers', cursive
-  font-size 48px
+  font-family 'Duru Sans', sans-serif
+  font-size 42px
   color white
   
   &:focus
@@ -59,18 +59,20 @@ div.btn-group
   
   
 input[type=submit]
-  relative top 100px
+  relative top 50px
   height 100px
-  font-family 'Life Savers', cursive
-  font-size 48px
+  font-family 'Duru Sans', sans-serif
+  font-size 42px
   color white
     
 
 div#heading
   relative top 50px
   
+  h1
+    relative bottom 10px
+  
   h2
-    relative top 20px
     text-shadow 2px 0px 10px #000
     
     &:before
@@ -78,11 +80,8 @@ div#heading
       font-weight 300
 
     
-  button
-    relative top 20px
-    
   input[type=password]
-    relative top 25px left 20px
+    relative bottom 20px left 20px
     height auto
     background none
     border none
@@ -90,12 +89,19 @@ div#heading
     border-radius 0px
     border-bottom 1px solid #555
     
-    font-family 'Life Savers', cursive
-    font-size 16px
+    font-family 'Duru Sans', sans-serif
+    font-size 42px
     color white
     
     &:focus
       box-shadow none
+      
+    &::-webkit-input-placeholder
+      font-size 16px
+      relative top 30px
+      
+    &::-moz-placeholder
+      font-size 16px
     
 #photos
   relative top 100px
