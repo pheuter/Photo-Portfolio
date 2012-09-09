@@ -37,10 +37,10 @@ Template.port.events =
       alert "Wrong password!"
     
   'mouseenter .photo': (e,t) ->
-    $(e.target).find('.btn').fadeIn()
+    $(e.target).find('.btn').fadeIn(100)
     
   'mouseleave .photo': (e,t) ->
-    $(e.target).find('.btn').fadeOut()
+    $(e.target).find('.btn').fadeOut(100)
   
   'click #upload': (e,t) ->
     if Session.get "authed"
